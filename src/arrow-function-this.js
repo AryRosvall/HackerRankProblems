@@ -1,5 +1,5 @@
-this.food = "salad"
-//const food = "salad"
+//this.food = "salad"
+const food = "salad"
 
 const meal = {
   food: "hamburger",
