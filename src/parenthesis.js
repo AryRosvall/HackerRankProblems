@@ -22,11 +22,7 @@ function balanceParenthesis(str) {
       }
     }
   })
-  console.log(check.length)
 
-  if (check.length === 0) {
-    return true
-  }
-  return false
+  return (check.length === 0);
 }
 
