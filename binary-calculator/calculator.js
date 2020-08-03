@@ -7,6 +7,7 @@ const btnSub = document.getElementById('btnSub');
 const btnMul = document.getElementById('btnMul');
 const btnDiv = document.getElementById('btnDiv');
 let res = document.getElementById('res');
+const symbols = ["+", "-", "*", "/"];
 
 
 function addValueToRes(value) {
@@ -26,7 +27,7 @@ function addSymbolToRes(value) {
 }
 
 function symbolExists(value) {
-  const symbols = ["+", "-", "*", "/"];
+
   if (symbols.find(symbol => symbol === value) === undefined) {
     return false
   }
@@ -39,7 +40,23 @@ function clearResult() {
 
 function calculateResult() {
   let currentValue = res.getAttribute('value');
-  console.log(eval(currentValue));
+  let arr = currentValue.split("");
+  let newArr = [];
+  let num = "";
+
+  arr.map(character => {
+
+    if (!symbols.includes(character)) {
+      num = num + character;
+    } else {
+      newArr.push(parseInt(num, 2))
+      newArr.push(character)
+      num = ""
+    }
+  })
+  newArr.push(parseInt(num, 2))
+
+  res.setAttribute("value", eval(newArr.join("")));
 }
 
 btn0.addEventListener('click', () => addValueToRes("0"));
