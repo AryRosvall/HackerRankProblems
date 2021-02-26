@@ -1,6 +1,6 @@
-//let str = "( () ( () ) () )"
-//let str = "( ()"
-let str = ")))((("
+let str = "( () ( () ) () )"
+let str = "( ()"
+//let str = ")))((("
 
 console.log("balanceParenthesis",
   balanceParenthesis(str))
@@ -21,8 +21,8 @@ function balanceParenthesis(str) {
         check.pop();
       }
     }
+    console.log(check)
   })
-
   return (check.length === 0);
 }
 
